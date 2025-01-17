@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "name": "Laptop",
+        "unit_price": 999.99
+    },
+    {
+        "id": 2,
+        "name": "Smartphone",
+        "unit_price": 699.49
+    },
+    {
+        "id": 3,
+        "name": "Tablet",
+        "unit_price": 499.99
+    },
+    {
+        "id": 4,
+        "name": "Smartwatch",
+        "unit_price": 199.99
+    },
+    {
+        "id": 5,
+        "name": "Bluetooth Speaker",
+        "unit_price": 79.99
+    },
+    {
+        "id": 6,
+        "name": "Headphones",
+        "unit_price": 129.99
+    },
+    {
+        "id": 7,
+        "name": "VR Headset",
+        "unit_price": 299.99
+    },
+    {
+        "id": 8,
+        "name": "Smart TV",
+        "unit_price": 599.99
+    },
+    {
+        "id": 9,
+        "name": "Drone",
+        "unit_price": 249.99
+    },
+    {
+        "id": 10,
+        "name": "Webcam",
+        "unit_price": 49.99
+    },
+    {
+        "id": 11,
+        "name": "Portable Charger",
+        "unit_price": 39.99
+    },
+    {
+        "id": 12,
+        "name": "Gaming Console",
+        "unit_price": 399.99
+    },
+    {
+        "id": 13,
+        "name": "Keyboard",
+        "unit_price": 59.99
+    },
+    {
+        "id": 14,
+        "name": "Mouse",
+        "unit_price": 29.99
+    },
+    {
+        "id": 15,
+        "name": "Printer",
+        "unit_price": 99.99
+    },
+    {
+        "id": 16,
+        "name": "Smart Thermostat",
+        "unit_price": 149.99
+    },
+    {
+        "id": 17,
+        "name": "Action Camera",
+        "unit_price": 199.99
+    },
+    {
+        "id": 18,
+        "name": "External Hard Drive",
+        "unit_price": 89.99
+    },
+    {
+        "id": 19,
+        "name": "Memory Card",
+        "unit_price": 19.99
+    },
+    {
+        "id": 20,
+        "name": "Smart Lightbulb",
+        "unit_price": 14.99
+    }
+]
