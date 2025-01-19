@@ -1,4 +1,5 @@
 import os
+from datetime import date
 
 from .database import get_database_connection, close_database_connection
 from utils.logging import logger
@@ -93,4 +94,58 @@ def fetch_orders(count=10, all=False) -> list | None:
 
     except Exception as e:
         logger.error(f"Error fetching orders: {e}")
+        return None
+
+
+def fetch_product_order_count(
+        start_date,
+        end_date,
+        count=10,
+        sort_by_orders=False
+        ) -> list | None:
+    """
+    Fetch the most ordered products within a date range.
+    Parameters: start_date: str, end_date: str
+    start_date -> Start date for the date range
+    end_date -> End date for the date range
+    """
+
+    try:
+        conn = get_database_connection()
+        if not conn:
+            return None
+        cursor = conn.cursor()
+
+        if not start_date:
+            cursor.execute("SELECT MIN(order_date) FROM orders")
+            start_date = cursor.fetchone()[0]
+            if not start_date:
+                logger.error("No orders found in the database.")
+                return None
+
+        if not end_date:
+            end_date = date.today().strftime('%Y-%m-%d')
+
+        query = """
+            SELECT product_id, COUNT(product_id) AS total_orders
+            FROM orders
+            WHERE order_date BETWEEN ? AND ?
+            GROUP BY product_id
+            """
+
+        if sort_by_orders:
+            query += " ORDER BY total_orders DESC"
+
+        query += " LIMIT ?"
+
+        cursor.execute(query, (start_date, end_date, count))
+
+        most_ordered = cursor.fetchall()
+
+        close_database_connection(conn)
+
+        return most_ordered
+
+    except Exception as e:
+        logger.error(f"Error fetching most ordered products: {e}")
         return None
